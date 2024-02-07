@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+     body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5; 
+           
+        }
+
+        header {
+            background-color: #36a8e6; /* Choose a color that fits your brand */
+            color: white;
+            padding: 10px 20px; /* Adjusted padding */
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px; /* Adjusted height */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px; /* Adjusted font size */
+        }
+
+        header img {
+            max-width: 80px; /* Adjusted max-width */
+            height: auto;
+            border-radius: 50%; /* Make the image circular */
+        }
+        section {
+            display: flex;
+            flex-wrap: wrap; /* Allow elements to wrap to the next line */
+            justify-content: space-between;
+            align-items: flex-start; /* Align items to the start */
+            padding: 10px; /* Adjusted padding */
+        }
+
+        .info-section, .image-section {
+            flex-basis: 45%; /* Adjusted width */
+            padding: 20px;
+        }
+
+        .info-section {
+            background-color: #f4f4f4; /* Set a background color for the info section */
+        }
+
+        .info-section h2 {
+            margin-top: 0; /* Remove top margin for the heading */
+        }
+
+        .image-section img {
+            max-width: 100%; /* Ensure the image stays within its container */
+            height: auto;
+            max-height: 600px; /* Adjusted max-height for the image */
+            margin-left: auto; /* Center the image horizontally */
+            margin-right: auto; /* Center the image horizontally */
+        }
+
+        .causes-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .causes-list li {
+            margin-bottom: 7px; /* Add space between list items */
+            position: relative;
+        }
+
+        .causes-list li::before {
+            content: "\2022"; /* Bullet symbol */
+            color: #36a8e6; /* Bullet color */
+            font-weight: bold;
+            font-size: 1.5em;
+            position: absolute;
+            left: -20px;
+        }
+
+        /* New styles for causes and solutions sections */
+        .causes-solutions {
+            display: flex;
+            flex-wrap: wrap; /* Allow elements to wrap to the next line */
+            justify-content: space-between;
+        }
+
+        .causes-solutions div {
+            flex-basis: 48%; /* Adjusted width */
+        }
+
+    .consultation-section {
+        background-color: #36a8e6; /* Background color */
+        color: white; /* Text color */
+        padding: 20px; /* Padding around the heading */
+        text-align: center; /* Center align text */
+        margin-top: 20px; /* Add some space from the previous section */
+}
+
+.consultation-section h2 {
+    text-align: center; /* Center align text */
+    margin: 0; 
+    font-size: 24px; /* Adjust font size */
+}
+
+.consultation-section {
+    margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+/* Styling for form labels */
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Styling for form submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #36a8e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Styling for form container */
+.contact-form {
+    width: 90%; /* Set width to 90% of the viewport */
+    max-width: 700px; /* Adjusted max-width for larger screens */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a shadow effect */
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+select {
+    appearance: none; /* Remove default appearance */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Add custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px 20px;
+}
+.submit-button {
+    background-color: #36a8e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #2e87bd;
+}
+
+.submit-button:focus {
+    outline: none;
+}
+
+.submit-button:active {
+    transform: translateY(1px);
+}
+.contact-form input[type="submit"] {
+    width: 100px; /* Adjust the width as needed */
+}
+
+.testimonials-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow testimonials to wrap to the next line */
+    justify-content: space-between;
+}
+
+.testimonial {
+    flex-basis: 30%; /* Adjusted width */
+    margin-bottom: 20px; /* Add space between testimonials */
+    text-align: center;
+}
+
+.testimonial img {
+    width: 100px; /* Adjust image size as needed */
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 10px;
+}
+
+.testimonial p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 20px;
+    color: gold; /* Color for the stars */
+}
+
+footer {
+            background-color: #333; /* Dark background color */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            /* position: fixed; */
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .headingwedding {
+            display: flex;
+            justify-content: center; /* Align text horizontally in the center */
+            align-items: center; /* Align text vertically in the center */
+            height: 40px; /* Adjust the height as needed */
+            margin: 0; /* Remove default margin */
+             /* Adjust the space between words */
+        }
+       
+        .headingwedding a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Change color to white */
+}   
+
+        /* Styling for the "Book Appointment" button */
+#book-appointment-btn {
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: lightblue; /* Button background color */
+    color: rgb(0, 0, 0); /* Text color */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as needed */
+    transition: background-color 0.3s ease; /* Add transition for hover effect */
+}
+
+#book-appointment-btn:hover {
+    background-color: #2e87bd; /* Darker background color on hover */
+}
+
+#book-appointment-btn:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+textarea {
+    width: 100%; /* Adjust as needed */
+    height: 200px; /* Fixed height */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Prevent resizing by users */
+}
+
+
+    </style>
+    <title>PAIN RELIEF CENTRE </title>
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var btn = document.getElementById("book-appointment-btn");
+        btn.addEventListener("click", function() {
+            // Scroll to the form section
+            document.querySelector(".form-section").scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+
+
+<body>
+
+    <header>
+        <h1>PAIN RELIEF CENTRE </h1>
+        <button id="book-appointment-btn">Book Appointment</button>
+        <img src="/1.png" alt="Company Logo">
+    </header>
+
+<section>
+    <div class="info-section">
+        <h2>Understanding Back Pain: Causes, Symptoms, and Solutions</h2>
+        <p>Are you grappling with persistent back pain? You're not alone. Back pain is a common ailment that affects people of all ages and lifestyles. In this guide, we'll delve into the causes, symptoms, and practical solutions to help you better understand and manage back pain.</p>
+        <div class="causes-solutions">
+            <div>
+                <h3>Causes of Back Pain:</h3>
+                <ul class="causes-list">
+                    <li>Muscle Strain</li>
+                    <li>Poor Posture</li>
+                    <li>Spinal Abnormalities</li>
+                    <li>Injuries and Accidents</li>
+                    <li>Infections or inflammatory conditions</li>
+                    <li>Arthritis</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Symptoms of Back Pain</h3>
+                <ul class="causes-list">
+                    <li>Difficulty standing or sitting</li>
+                    <li>Pain worsens with movement</li>
+                    <li>Limited flexibility</li>
+                    <li>Muscle spasms</li>
+                    <li>Difficulty walking or bending</li>
+                    <li>Pain that persists for more than a few weeks</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <p>
+            <h3>Solution for Back Pain</h3>
+            <li> Engaging in regular physical activity helps strengthen the muscles that support your back. Exercises like walking, swimming, and yoga reduce the risk of back pain.</li>
+            <li>Practicing good posture while sitting, standing, and lifting can help prevent strain on your back muscles. Sit up straight, keep your shoulders relaxed, and avoid slouching.</li>
+            <li>Choose furniture that supports your spine's natural curves, such as chairs with lumbar support or adjustable desks. This can help reduce pressure on your back and promote better alignment.</li>
+            <li>Applying heat packs or cold packs to the affected area can help alleviate pain and reduce inflammation.</li>
+        </p>
+    </div>
+    <div class="image-section">
+        <img src="/xx0.jpg" alt="Image">
+    </div>
+</section>
+
+<section class="consultation-section">
+    <h2 class="headingwedding">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Call now for your Consultation : &nbsp; <a href="tel:+7205000027">7205000027</a></h2>
+</section>
+
+<section>
+    <div class="info-section">
+        <h2>Understanding Joint Pain: Causes, Symptoms, and Solutions</h2>
+        <p>Joint pain can be a challenging companion, affecting individuals of all ages and backgrounds. Whether you're experiencing discomfort in your knees, hips, shoulders, or elsewhere, joint pain can significantly impact your quality of life. In this comprehensive guide, we'll explore the causes, symptoms, and effective strategies to manage and alleviate joint pain. By gaining a better understanding of your condition and implementing targeted solutions, you can take proactive steps towards improved joint health and overall well-being.
+
+        </p>
+
+        <div class="causes-solutions">
+            <div>
+                <h3>Causes of Joint Pain:</h3>
+                <ul class="causes-list">
+                    <li>Osteoarthritis</li>
+                    <li>Rheumatoid arthritis</li>
+                    <li>Injury or trauma</li>
+                    <li>Autoimmune diseases</li>
+                    <li>Bone cancer</li>
+                    <li>Overuse or repetitive motion</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Symptoms of Joint Pain</h3>
+                <ul class="causes-list">
+                    <li>Warmth around the joint</li>
+                    <li>Joint instability</li>
+                    <li>Difficulty moving the joint</li>
+                    <li>Grinding sensation
+                    </li>
+                    <li>Joint tenderness</li>
+                    <li>Redness</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <p>
+            <h3>Solution for Joint Pain</h3>
+            <li> A treatment approach that involves specific exercises and techniques to improve joint function, reduce pain, and enhance mobility.</li>
+            <li>Regular physical activity, including exercises targeting joint flexibility, strength, and range of motion, can help alleviate joint pain and improve overall joint health.</li>
+            <li>Maintaining a healthy weight reduces stress on the joints, especially weight-bearing joints like the knees and hips, thereby decreasing joint pain and the risk of further damage.</li>
+            <li>Braces, splints, and canes can provide support to weakened or painful joints, reducing strain and discomfort during daily activities.</li>
+        </p>
+    </div>
+    <div class="image-section">
+        <img src="/z2.jpg" alt="Image">
+    </div>
+</section>
+
+<section class="consultation-section">
+    <h2> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Schedule your consultation free of charge, today!!!</h2>
+</section>
+
+<section class="form-section">
+    <form name="submit-to-google-sheet" action="#" method="post" class="contact-form">
+        <div class="form-group">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+        </div> <br>
+        <div class="form-group">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+        </div> <br>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        </div> <br>
+        <div class="form-group">
+            <label for="condition">Condition You are here for ?* :</label>
+            <select id="condition1" name="condition1" required>
+                <option value="" selected disabled>Select an option</option>
+                <option value="joint-pain">Joint Pain</option>
+                <option value="spine-pain">Spine Related Pain</option>
+                <option value="neck-pain">Neck Pain</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="condition">How did you find us ?* :</label>
+            <select id="condition2" name="condition2" required>
+                <option value="" selected disabled>Select an option</option>
+                <option value="spine-pain">Online Search</option>
+                <option value="joint-pain">Social Media</option>
+                <option value="neck-pain">Friend/Family</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" required></textarea>
+        </div> <br>
+
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</section>
+
+<script>
+    // Adding an event listener to the form submission
+    document.querySelector('.contact-form').addEventListener('submit', function(event) {
+        // Preventing the default form submission behavior
+        event.preventDefault();
+        // Displaying an alert message
+        alert("Thank you, your response is saved.");
+    });
+</script>
+
+
+<section class="testimonials-section">
+    <div class="testimonial">
+        <img src="/k1.jpg" alt="Patient 1">
+        <p>"I cannot express how grateful I am for the incredible care and expertise provided by the team at this healthcare app. After suffering from debilitating back pain for years, I finally found relief through their personalized treatment plan. The exercises and lifestyle modifications prescribed were tailored to my needs and brought about remarkable improvements in my condition. I'm now able to enjoy life without the constant burden of back pain." </p>
+        <div class="rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <!-- 5-star rating -->
+        </div>
+    </div>
+    <div class="testimonial">
+        <img src="/k2.jpg" alt="Patient 2">
+        <p>"Absolutely phenomenal experience with this healthcare app! From the initial consultation to the ongoing support, every step of the journey was seamless and professional. The team listened attentively to my concerns about chronic back pain and designed a comprehensive treatment plan that exceeded my expectations. Thanks to their expertise and guidance, I've regained mobility, strength, and most importantly, my quality of life. I can't thank them enough for their dedication and commitment to my well-being." </p>
+        <div class="rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <!-- 5-star rating -->
+        </div>
+    </div>
+    <div class="testimonial">
+        <img src="/k3.jpg" alt="Patient 3">
+        <p>"Highly recommend this healthcare app to anyone struggling with joint pain or mobility issues! The team of specialists goes above and beyond to provide personalized care and support tailored to your unique needs. From cutting-edge treatments to practical lifestyle advice, they equip you with the tools and resources necessary to overcome obstacles and achieve lasting results. Thanks to their expertise and compassion, I've experienced significant improvements in my joint health and overall well-being." </p>
+        <div class="rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <!-- 5-star rating -->
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 Pain Relief Centre. All Rights Reserved.</p>
+</footer>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyc5CLoi24B_vbbmPZ5NGOGO2hmMoiqpKVFmlo8h8YfTZ4Y0zfOjtntebIkALbqMNsKIg/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+    <script>
+    function submitForm() {
+        // You can add your form submission logic here, such as sending data to a backend
+        // For now, we're just displaying a message
+        alert("Thank you, your response is saved.");
+        return false; // Prevents the form from submitting
+    }
+</script>
+
+</body>
+</html>
